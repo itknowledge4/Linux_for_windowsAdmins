@@ -1,0 +1,20 @@
+##  Set IP settings
+#Edit the file that holds the IP configuration
+sudo nano /etc/netplan/00-installer-config.yaml
+#Write the following info (IP settings could be different in your environment so adjust as needed)
+network:
+  version: 2
+  renderer: NetworkManager/ networkd
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses: [192.168.1.4/24]
+      gateway4: 192.168.1.254
+
+#To exit and save: Press ctrl+o, press enter, press ctrl+x
+#Apply settings
+sudo netplan apply
+
+##  From a client try the SSH connection
+ssh 192.168.1.4 -l user100
+#type yes at the prompt, then type the password

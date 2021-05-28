@@ -5,3 +5,4 @@ You can find all presentations, code and other materials from the  Linux for Win
 
 ## Single Videos
 [01. Introduction - Linux for Windows Admins](https://youtu.be/Apylt7eMkRg) <br />
+[02. Install an Ubuntu Server - Linux for Windows Admins](https://youtu.be/J08z_CNDLRA)
