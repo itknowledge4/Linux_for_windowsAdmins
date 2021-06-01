@@ -1,0 +1,34 @@
+#See where you are in the file system
+pwd
+#Go lower one level
+cd ..
+#Change to another directory
+cd /
+#Go to home directory
+cd
+
+cd /
+#See what is in a directory
+ls
+#See more details and hidden files
+ls -la
+#See last access time of a file
+ls -lu swap.img
+#See creation time
+ls -lc swap.img
+
+#Get info about a specific fs item
+file etc
+file swap.img
+file bin
+
+cd
+#Create a directory
+mkdir test1
+mkdir -p test2/test
+#Create an empty file
+touch test2/file.txt
+#Remove an empty directory
+rmdir test1
+#Remove a directory with all contents
+rm -rf test2
