@@ -1,0 +1,54 @@
+#Already known
+pwd
+cd
+ls
+file
+mkdir
+touch
+rmdir
+rm
+
+#See man page for ls
+man ls
+#See man page that introduces you to Linux
+man intro
+
+#Show a small description of command from its man page
+whatis pwd
+#Search manual name and description for keyword
+apropos directory
+
+#System power
+poweroff
+reboot
+
+#System uptime
+uptime
+
+#See machine name
+hostname
+
+#Current date and time
+date
+
+#View file contents one page at a time
+more /etc/group
+
+#Search for text in files
+grep "root" /etc/passwd
+
+#Search for files (search in /etc for files named passwd)
+find /etc -name "passwd" -print
+sudo find /etc -name "passwd" -print
+sudo find /etc -name "passw*" -print
+
+#See the current user
+whoami
+#See who is the user that runs the command when you use sudo
+sudo whoami
+
+#Get file contants
+cat /etc/group
+
+#See IP address info
+ip address
