@@ -8,4 +8,5 @@ You can find all presentations, code and other materials from the  Linux for Win
 [02. Install an Ubuntu Server - Linux for Windows Admins](https://youtu.be/J08z_CNDLRA)<br />
 [03. The Linux FileSystem - Linux for Windows Admins](https://youtu.be/I_1J9CFqUhU)<br />
 [04. Commands and man pages - Linux for Windows Admins](https://youtu.be/lWjSaAUiG0w)<br />
-[05. Edit text files with vim - Linux for Windows Admins](https://youtu.be/ud8MYEFEuTo)
+[05. Edit text files with vim - Linux for Windows Admins](https://youtu.be/ud8MYEFEuTo)<br/ >
+[06. Edit text files with nano](https://youtu.be/fyBATiL_jKw)
