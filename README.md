@@ -9,4 +9,5 @@ You can find all presentations, code and other materials from the  Linux for Win
 [03. The Linux FileSystem - Linux for Windows Admins](https://youtu.be/I_1J9CFqUhU)<br />
 [04. Commands and man pages - Linux for Windows Admins](https://youtu.be/lWjSaAUiG0w)<br />
 [05. Edit text files with vim - Linux for Windows Admins](https://youtu.be/ud8MYEFEuTo)<br/ >
-[06. Edit text files with nano](https://youtu.be/fyBATiL_jKw)
+[06. Edit text files with nano](https://youtu.be/fyBATiL_jKw)<br />
+[07. Output redirection and the pipeline - Linux for Windows Admins](https://youtu.be/39HQ9oZjPfc)

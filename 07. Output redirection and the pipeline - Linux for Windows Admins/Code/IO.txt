@@ -1,0 +1,29 @@
+#Write the date and time to a file
+date > test
+cat test
+# > overwrites the file it redirects to
+echo "Not useful" > test
+cat test
+#To append to a file use >>
+date >> test
+cat test
+#Redirecting input
+cat /etc/passwd
+sort < /etc/passwd
+#redirect errors to a file
+find /etc -name pass* -print
+find /etc -name pass* -print 2> errors
+cat errors
+#Redirect output to a file and errors to another file
+find /etc -name pass* -print > test 2> errors
+cat test
+cat errors
+#Redirect output and errors to the same file
+find /etc -name pass* -print > test 2>&1
+cat test
+#Redirect to /dev/null which means throw away the text you are redirecting
+find /etc -name pass* -print 2> /dev/null
+
+#Use the pipeline
+ls -l /etc | grep passwd
+cat /etc/passwd | grep systemd- | sort
