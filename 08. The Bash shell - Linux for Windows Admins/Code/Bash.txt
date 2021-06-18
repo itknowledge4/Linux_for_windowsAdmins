@@ -1,0 +1,29 @@
+#Show current bash prompt value
+echo $PS1
+#Modify the prompt for the current session
+export PS1="\u ::"
+export PS1="\H \s\v - "
+export PS1="\H \t > "
+export PS1="\H \t >\n"
+export PS1="\e[0;32m\H \t > \e[0m"
+#Log out and back in to go back to the default prompt
+#To modify the prompt permanently for a user just put the export command in the user's .bashrc file
+cp ./.bashrc ./.bashrc.bak
+#Edit the .bashrc file and place the export command you like in it
+	#Change bash prompt
+	export PS1="\e[0;32m\H \t\e[0m > "
+#Reload the file
+source ./.bashrc
+
+#Put the original back
+cp -rf ./.bashrc.bak ./.bashrc
+
+#See list of shells on the system
+cat /etc/shells
+#Show the current shell
+echo $SHELL
+#See the user's default shell
+grep "user100" /etc/passwd
+#Change the current user's default shell (if you want to change for another user just include the username at the end and sudo in front of the command)
+chsh --shell /bin/sh
+#Log off and log in again to see changes
