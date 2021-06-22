@@ -1,0 +1,41 @@
+#See the contents of the passwd file
+cat /etc/passwd
+#See the contents of the shadow file
+sudo cat /etc/shadow
+#See the contents of the group file
+cat /etc/group
+
+#Create a new user and also create a primary group for it and set bash as the default shell and create a home directory
+sudo useradd -m --shell /bin/bash user101
+#Set password
+sudo passwd user101
+
+#See results
+grep user101 /etc/passwd
+grep user101 /etc/group
+
+#Create a new group and specify a GID
+sudo groupadd g1 -g 5000
+#Add a user to the group
+sudo usermod --groups g1 -a user101
+
+#See the groups a user is part of (no user specified will return results for current one)
+groups user101
+id user101
+
+#See who is in the sudo group
+grep sudo /etc/group
+
+#Open an interactive shell with root
+sudo -i
+whoami
+exit
+#Open an interactive shell as another user
+sudo -i -u user101
+whoami
+exit
+
+#Delete a user
+sudo userdel -r user101
+#Delete a group
+sudo groupdel g1
