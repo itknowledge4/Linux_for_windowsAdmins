@@ -1,0 +1,34 @@
+#Create a test file
+touch file1
+#Check out the file properties
+ls -l file1
+
+#Remove r from other users
+chmod o-r file1
+ls -l file1
+#Add x to owner and others
+chmod uo+x file1
+ls -l file1
+#Remove x for everyone
+chmod -x file1
+ls -l file1
+#Set the permissions to rw- for everyone
+chmod a=rw file1
+ls -l file1
+#Set permissions as at the beginning
+chmod =rw file1
+ls -l file1
+
+#Use numeric values for permissions
+chmod 774 file1
+ls -l file1
+
+#Test permissions for a script
+echo "echo \"This is a script\"" > script1.sh
+ls -l script1.sh
+#Try to execute the file
+./script1.sh
+#Add the x bit for the owner
+chmod u+x script1.sh
+ls -l script1.sh
+./script1.sh
