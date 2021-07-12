@@ -1,0 +1,35 @@
+#Update repository cache to get new version info for software
+sudo apt update
+#See what software can be upgraded
+apt list --upgradable
+#Upgrade software
+sudo apt upgrade
+#Search for software
+apt search pico
+#Install software
+sudo apt install alpine-pico -y
+#Remove software
+sudo apt remove alpine-pico
+#Remove unneeded dependencies
+sudo apt  auto-remove
+#Remove software while also deleting coniguration
+sudo apt purge alpine-pico
+#Get info about a package
+apt show alpine-pico
+
+#List installed packages
+dpkg -l
+#List packages with wildcard
+dpkg -l '*linux-image*'
+#Get the package contents
+dpkg -L apt
+#Find package that provides this file
+dpkg -S /bin/bash
+#You can then get the package info
+dpkg -l bash
+#Download a DEB package
+curl http://ftp.ro.debian.org/debian/pool/main/a/as31/as31_2.3.1-7_amd64.deb -o asm.deb -x 192.168.1.254:80
+#Install a DEB package
+sudo dpkg -i asm.deb
+#Remove package along with all its files
+sudo dpkg --purge as31

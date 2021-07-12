@@ -13,4 +13,5 @@ You can find all presentations, code and other materials from the  Linux for Win
 [07. Output redirection and the pipeline - Linux for Windows Admins](https://youtu.be/39HQ9oZjPfc)<br />
 [08. The Bash shell - Linux for Windows Admins](https://youtu.be/UeG2o_Vu9C4)<br />
 [09. Users and groups - Linux for Windows Admins](https://youtu.be/XKjWM-oRpmw)<br />
-[10. File and directory permissions - Linux for Windows Admins](https://youtu.be/JvJ3kqTeHB4)
+[10. File and directory permissions - Linux for Windows Admins](https://youtu.be/JvJ3kqTeHB4)<br />
+[11. Installing programs - Linux for Windows Admins](https://youtu.be/WuNXiliO6mA)
