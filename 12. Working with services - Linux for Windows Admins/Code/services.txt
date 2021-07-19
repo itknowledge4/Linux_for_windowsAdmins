@@ -1,0 +1,25 @@
+#Install the apache web server for testing out commands
+sudo apt install apache2 -y
+
+#List services
+systemctl list-units --type=service
+systemctl list-units --type=service --state=running
+
+#Check state
+systemctl is-active apache2
+#Check if service is enabled
+systemctl is-enabled apache2
+#Disable service
+sudo systemctl disable apache2
+#Enable service
+sudo systemctl enable apache2
+#Start service
+sudo systemctl start apache2
+#Restart service
+sudo systemctl restart apache2
+#Reload service (read the config file without restart)
+sudo systemctl reload apache2
+#Reload or restart depending of the service support status
+sudo systemctl reload-or-restart apache2
+#Get service status
+systemctl status apache2
