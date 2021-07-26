@@ -1,0 +1,41 @@
+#List block devices
+lsblk
+lsblk -S
+lsblk -f
+
+#Initialize disk and create partition
+sudo fdisk /dev/sdb
+#Press g, then n, then 1, leave default for sector data, then press w
+#Create a filesystem on device
+sudo mkfs.ext4 /dev/sdb1
+
+#Create a mountpoint
+cd /mnt
+sudo mkdir backups
+#Mount device
+sudo mount /dev/sdb1 /mnt/backups
+#Make this persistent
+sudo nano /etc/fstab
+#Add a line:
+/dev/sdb1	/mnt/backups	ext4	defaults	0	0
+#List mounted devices
+df -h
+#List only ext4 partitions
+df -h -t ext4
+#Unmount a device
+sudo umount /dev/sdb1
+
+#Initialize and format a disk in one command
+echo -e "n\np\n1\n\n\nt\nda\nw" | sudo fdisk /dev/sdc
+#Create a filesystem on device
+sudo mkfs.ext4 /dev/sdc1
+
+sudo mkdir data
+#Add partition to fstab
+sudo nano /etc/fstab
+#Add line:
+/dev/sdc1	/mnt/data	ext4	defaults	0	0
+
+#Restart system and check if the partitions are mounted
+sudo reboot
+df -h -t ext4
