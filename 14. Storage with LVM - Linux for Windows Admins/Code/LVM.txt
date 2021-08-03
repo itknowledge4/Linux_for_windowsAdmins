@@ -1,0 +1,75 @@
+#Use lsblk to see what disks we have
+lsblk
+
+#Create a pv
+sudo pvcreate /dev/sdd
+#List PVs
+sudo pvs
+
+#Create a vg named vg_data
+sudo vgcreate vg_data /dev/sdd
+#List VGs
+sudo vgs
+
+#Create logical volume that is 2GB and is named lv_data1
+sudo lvcreate -L 2G -n lv_data1 vg_data
+#List LVs
+sudo lvs
+#Get more info about LVs
+sudo lvdisplay
+
+#Create a fs on the lv
+sudo mkfs.ext4 /dev/vg_data/lv_data1
+
+#Mount the new fs
+sudo mkdir /mnt/lvdata1
+sudo mount /dev/vg_data/lv_data1 /mnt/lvdata1
+
+#Create another LV
+sudo lvcreate -L 1.5G -n lv_data2 vg_data
+sudo mkfs.ext4 /dev/vg_data/lv_data2
+sudo mkdir /mnt/lvdata2
+sudo mount /dev/vg_data/lv_data2 /mnt/lvdata2
+
+#Create a third LV with all the remaining size of the VG
+sudo lvcreate --extents 100%FREE -n lv_data3 vg_data
+
+sudo lvs
+sudo vgs
+
+#Extend volume group
+sudo pvcreate /dev/sde
+sudo vgextend vg_data /dev/sde
+sudo vgs
+#Extend logical volume and use -r to extend the fs
+sudo lvextend -L +1G -r /dev/vg_data/lv_data1
+sudo lvs
+df -h
+#Extend a logical volume and extend the fs separately
+sudo lvextend -L +1G /dev/vg_data/lv_data2
+sudo lvs
+df -h
+sudo resize2fs /dev/vg_data/lv_data2
+df -h
+
+#Mirroring LVs
+sudo pvcreate /dev/sdf /dev/sdg
+sudo vgcreate vg_mir /dev/sdf /dev/sdg
+# -m 1 tells it to make an extra copy like raid 1
+sudo lvcreate -m 1 -L 2G -n lv_important vg_mir
+sudo lvs | grep lv_important
+sudo vgs | grep vg_mir
+#Get extended info for when you have mirrored LVs
+sudo lvs -a
+
+#Removing LVs, VGs and PVs
+#Unmount the LVs before beginning
+sudo lvremove /dev/vg_mir/lv_important -y
+#Remove a PV from a VG
+sudo vgreduce vg_mir /dev/sdg
+#Remove a PV from LVM
+sudo pvremove /dev/sdg
+#Remove a vg
+sudo vgremove vg_mir
+#Remove the other PV from LVM
+sudo pvremove /dev/sdf

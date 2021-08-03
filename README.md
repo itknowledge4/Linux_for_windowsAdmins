@@ -16,4 +16,5 @@ You can find all presentations, code and other materials from the  Linux for Win
 [10. File and directory permissions - Linux for Windows Admins](https://youtu.be/JvJ3kqTeHB4)<br />
 [11. Installing programs - Linux for Windows Admins](https://youtu.be/WuNXiliO6mA)<br />
 [12. Working with services - Linux for Windows Admins](https://youtu.be/R7OOjbOpXGQ)<br />
-[13. Basic storage - Linux for Windows Admins](https://youtu.be/9OJT-9dEtKw)
+[13. Basic storage - Linux for Windows Admins](https://youtu.be/9OJT-9dEtKw)<br />
+[14. Storage with LVM - Linux for Windows Admins](https://youtu.be/gZvEdKNk5bc)
