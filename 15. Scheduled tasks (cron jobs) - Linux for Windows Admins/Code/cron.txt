@@ -1,0 +1,26 @@
+#Check the cron service
+systemctl status cron
+
+#list tasks
+crontab -l
+
+#Define a command to run and test it first
+echo "It is $(date --iso-8601=seconds) for $(whoami)" >> cronjobtest
+
+#Create a task to run the command
+crontab -e
+#Write the text (run command every minute of 7 PM only on 22 april)
+* 19 22 4 * echo "It is $(date --iso-8601=seconds) for $(whoami)" >> cronjobtest
+
+#Check
+ls
+cat cronjobtest
+
+#Create a task as root
+sudo crontab -e
+#Write the text (run command every minute of 7 PM only on 22 april)
+* 19 22 4 * echo "It is $(date --iso-8601=seconds) for $(whoami)" >> cronjobtest
+
+#Check
+sudo ls /root
+sudo cat /root/cronjobtest
