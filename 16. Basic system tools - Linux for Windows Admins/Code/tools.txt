@@ -1,0 +1,32 @@
+#The Linux admin's task manager
+#Sort by CPU usage: press P
+#Sort by memory usage: press M
+top
+#List processes for current user
+ps
+#List processes for all users with more info
+ps aux
+
+#Get RAM info
+free -h
+#Get info about RAM modules
+sudo dmidecode -t memory
+
+#Get CPU info
+lscpu
+#Get some more info about CPU
+sudo dmidecode -t processor
+
+#Get IP info
+ip address
+
+#Test connectivity using ping
+ping localhost -c 3
+
+#view all listening tcp and udp ports
+ss -tul
+#view established tcp and upd connections
+ss -tu
+
+#List active user sessions
+who
