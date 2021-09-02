@@ -19,4 +19,5 @@ You can find all presentations, code and other materials from the  Linux for Win
 [13. Basic storage - Linux for Windows Admins](https://youtu.be/9OJT-9dEtKw)<br />
 [14. Storage with LVM - Linux for Windows Admins](https://youtu.be/gZvEdKNk5bc)<br />
 [15. Cron jobs - Linux for Windows Admins](https://youtu.be/Vj79s5C5v2M)<br />
-[16. Basic system tools - Linux for Windows Admins](https://youtu.be/O3N39ACccPw)
+[16. Basic system tools - Linux for Windows Admins](https://youtu.be/O3N39ACccPw)<br />
+[17. Working with logs - Linux for Windows Admins](https://youtu.be/-HcvEG7Yel4)

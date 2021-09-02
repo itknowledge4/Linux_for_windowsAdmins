@@ -1,0 +1,35 @@
+#### Journalctl logs
+
+#Get the status of the journald service
+systemctl status systemd-journald
+
+#view all logs of systemd
+journalctl
+#View the logs live (show logs as they appear) - Ctrl+C to exit
+journalctl -f
+#View the logs live only for a service
+journalctl -f -u ssh
+#View all logs for ssh
+journalctl -u ssh
+#View last 3 log entries
+journalctl -n 3
+#View logs filtered by user id
+journalctl _UID=1000
+#View logs in a time interval
+journalctl --since "2021-04-20 01:10:30" --until "2021-04-24 09:10:30"
+#View logs in the last 10 minutes
+journalctl --since "10 minutes ago"
+
+
+#### /var/log
+
+ls /var/log
+
+#See kernel messages from the last boot
+dmesg
+dmesg -T
+dmesg -T --level=err,warn
+#Get the same messages by reading the dmesg file
+cat /var/log/dmesg
+tail -20 /var/log/dmesg
+#tail can be used with -f to follow the file
