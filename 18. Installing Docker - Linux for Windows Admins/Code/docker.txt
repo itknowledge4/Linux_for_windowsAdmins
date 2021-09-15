@@ -1,0 +1,25 @@
+#Install tls certificates for docker
+sudo apt-get install apt-transport-https ca-certificates gnupg-agent software-properties-common
+#Get docker gpg encryption key (use -x for proxy)
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg -x 192.168.1.254:80 | sudo apt-key add -
+#Add docker repository
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#Install docker
+sudo apt-get install docker-ce
+
+#Configure proxy
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo nano /etc/systemd/system/docker.service.d/proxy.conf
+
+#Add:
+[Service]
+Environment="HTTP_PROXY=http://192.168.1.254:80"
+Environment="NO_PROXY="localhost,127.0.0.1,::1"
+
+#Reload daemon configuration
+sudo systemctl daemon-reload
+#Restart docker
+sudo systemctl restart docker.service
+
+#Run a test container
+sudo docker run hello-world
